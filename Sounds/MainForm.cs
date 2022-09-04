@@ -826,7 +826,7 @@ namespace Sounds
             var didAdd = false;
             foreach (var f in M3UParser.Parse(splitText, Path.GetDirectoryName(fileName)))
             {
-                didAdd = didAdd || AddItem(f, false);
+                didAdd = AddItem(f, false) || didAdd;
             }
             Dirty = append && didAdd; // appending always dirty, opening is not
             UpdatePlaylistTotal();
