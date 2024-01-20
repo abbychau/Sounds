@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -11,7 +10,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
 
@@ -237,6 +235,21 @@ namespace Sounds
             };
 
             // finally init UI by creating PL (args will override it)
+            //load the playlist file from registry
+            //check if  Properties.Settings.Default has ["LastPlaylistFile"]
+            if (Properties.Settings.Default.LastPlaylist != null)
+            {
+                string playlistFile = Properties.Settings.Default.LastPlaylist;
+
+                //check if the file exists
+                if (File.Exists(playlistFile))
+                {
+                    //open the playlist file
+                    OpenPlaylist(playlistFile, false);
+                    return;
+                }
+            }
+
             NewPlaylist();
         }
 
@@ -476,6 +489,10 @@ namespace Sounds
                     preview.Title = Text;
                     preview.Tooltip = Text;
                 }
+            }
+            if (trayIcon != null)
+            {
+                trayIcon.Text = preview.Title;
             }
         }
 
@@ -830,6 +847,10 @@ namespace Sounds
             }
             Dirty = append && didAdd; // appending always dirty, opening is not
             UpdatePlaylistTotal();
+
+            //save playlist file to registry, so sounds can open it again automatically
+            Properties.Settings.Default.LastPlaylist = fileName;
+            Properties.Settings.Default.Save();
         }
 
         public void SavePlaylist(bool forceDialog)
@@ -922,15 +943,20 @@ namespace Sounds
                 positionTrackBar.Value = value;
             }
 
+            // human readable position and timespan (hour minute second)
+            string shortPosition = mp.Position.ToString(@"hh\:mm\:ss");
+            string shortDuration = mp.NaturalDuration.HasTimeSpan ?
+                mp.NaturalDuration.TimeSpan.ToString(@"hh\:mm\:ss") : string.Empty;
+
+
             if (mp.NaturalDuration.HasTimeSpan)
             {
                 positionLabel.Text = string.Format("{0} / {1}",
-                    mp.Position, mp.NaturalDuration.TimeSpan);
+                                       shortPosition, shortDuration);
             }
             else
             {
-                positionLabel.Text = string.Format("{0}",
-                    mp.Position);
+                positionLabel.Text = shortPosition;
             }
         }
 
@@ -1165,6 +1191,13 @@ namespace Sounds
                     e.Cancel = true;
                     return;
             }
+
+            //if close reason is user closing, don't ask
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                return;
+            }
+
             if (!ChangePlaylistAskStop(MiscStrings.quitWhilePlaying))
             {
                 e.Cancel = true;
@@ -1297,6 +1330,92 @@ namespace Sounds
                     playlistUnselectedContextMenu.Show(listView1, e.Location);
                 }
             }
+        }
+
+        //NotifyIcon trayIcon;
+        private NotifyIcon trayIcon;
+
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            //prevent flicker from the listview
+            listView1.GetType().GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(listView1, true, null);
+
+            //set listview font size to my preference( 新細明體 9pt )
+            //listView1.Font = new Font("新細明體", 8, FontStyle.Regular, GraphicsUnit.Point, ((byte)(136)));
+
+            //create tray icon
+            trayIcon = new NotifyIcon();
+            trayIcon.Icon = Properties.Resources.AppIcon;
+            trayIcon.Text = "Sounds";
+            trayIcon.Visible = true;
+            trayIcon.MouseClick += (o, ev) =>
+            {
+                if (ev.Button == MouseButtons.Left)
+                {
+                    //show and bring to front
+                    Show();
+                    Activate();
+
+                }
+            };
+
+            // when the form is minimized or closed via X button, hide it and show the tray icon.
+            this.FormClosing += (o, ev) =>
+            {
+                if (ev.CloseReason == CloseReason.UserClosing)
+                {
+                    ev.Cancel = true;
+                    Hide();
+                }
+            };
+
+            this.Resize += (o, ev) =>
+            {
+                if (WindowState == FormWindowState.Minimized)
+                {
+                    Hide();
+                }
+            };
+
+            //create context menu for tray icon
+            var trayMenu = new ContextMenuStrip();
+            //Play/Pause
+            trayMenu.Items.Add("Play/Pause", null, (o, ev) => PlayPauseToggle());
+            //Next
+            trayMenu.Items.Add("Next", null, (o, ev) => Next());
+            //Previous
+            trayMenu.Items.Add("Previous", null, (o, ev) => Previous());
+            //Stop
+            trayMenu.Items.Add("Stop", null, (o, ev) => Stop());
+            //Separator
+            trayMenu.Items.Add(new ToolStripSeparator());
+            trayMenu.Items.Add("Show", null, (o, ev) => Show());
+            //Separator
+            trayMenu.Items.Add(new ToolStripSeparator());
+            trayMenu.Items.Add("Exit", null, (o, ev) => Application.Exit());
+
+            trayIcon.ContextMenuStrip = trayMenu;
+
+        }
+
+
+        private const int SnapDist = 100;
+        private bool DoSnap(int pos, int edge)
+        {
+            int delta = pos - edge;
+            return delta > 0 && delta <= SnapDist;
+        }
+        //OnResizeEnd, make window snap to edges
+        protected override void OnResizeEnd(EventArgs e)
+        {
+                base.OnResizeEnd(e);
+            Screen scn = Screen.FromPoint(this.Location);
+            if (DoSnap(this.Left, scn.WorkingArea.Left)) this.Left = scn.WorkingArea.Left;
+            if (DoSnap(this.Top, scn.WorkingArea.Top)) this.Top = scn.WorkingArea.Top;
+            if (DoSnap(scn.WorkingArea.Right, this.Right)) this.Left = scn.WorkingArea.Right - this.Width;
+            if (DoSnap(scn.WorkingArea.Bottom, this.Bottom)) this.Top = scn.WorkingArea.Bottom - this.Height;
+
         }
     }
 }
