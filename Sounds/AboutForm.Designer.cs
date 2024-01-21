@@ -40,6 +40,7 @@
             this.okButton = new System.Windows.Forms.Button();
             this.taglineLabel = new System.Windows.Forms.Label();
             this.websiteLink = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabControl.SuspendLayout();
             this.licensePage.SuspendLayout();
             this.authorsTab.SuspendLayout();
@@ -120,11 +121,19 @@
             this.websiteLink.TabStop = true;
             this.websiteLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.websiteLink_LinkClicked);
             // 
+            // linkLabel1
+            // 
+            resources.ApplyResources(this.linkLabel1, "linkLabel1");
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // AboutForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.okButton;
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.websiteLink);
             this.Controls.Add(this.taglineLabel);
             this.Controls.Add(this.okButton);
@@ -161,5 +170,6 @@
         private System.Windows.Forms.LinkLabel websiteLink;
         private System.Windows.Forms.TabPage attributionBox;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

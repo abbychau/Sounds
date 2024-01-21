@@ -126,20 +126,23 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="versionLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 13</value>
+    <value>13, 9</value>
+  </data>
+  <data name="versionLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="versionLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 20</value>
+    <value>480, 23</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="versionLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="versionLabel.Text" xml:space="preserve">
-    <value>Sounds 0.0.0.0</value>
+    <value>Sounds 1.1.0</value>
   </data>
   <data name="versionLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;versionLabel.Name" xml:space="preserve">
     <value>versionLabel</value>
@@ -151,7 +154,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;versionLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="tabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -160,7 +163,10 @@
     <value>Fill</value>
   </data>
   <data name="licenseBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>4, 3</value>
+  </data>
+  <data name="licenseBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="licenseBox.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -169,7 +175,7 @@
     <value>Vertical</value>
   </data>
   <data name="licenseBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>346, 237</value>
+    <value>464, 273</value>
   </data>
   <data name="licenseBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -194,13 +200,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <value>0</value>
   </data>
   <data name="licensePage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 25</value>
+  </data>
+  <data name="licensePage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="licensePage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="licensePage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 243</value>
+    <value>472, 279</value>
   </data>
   <data name="licensePage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -224,7 +233,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <value>Fill</value>
   </data>
   <data name="authorsBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>4, 3</value>
+  </data>
+  <data name="authorsBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="authorsBox.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -233,13 +245,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <value>Vertical</value>
   </data>
   <data name="authorsBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>346, 237</value>
+    <value>464, 273</value>
   </data>
   <data name="authorsBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="authorsBox.Text" xml:space="preserve">
-    <value>Application author: calvin &lt;calvin@cmpct.info&gt;
+    <value>Application authors: 
+Calvin &lt;calvin@cmpct.info&gt; (Original) 
+Abby  &lt;abbychau@gmail.com&gt; (https://github.com/abbychau/Sounds)
+	
 Japanese translation: tsundoku &lt;tsundoku@tsundoku.ne.jp&gt;</value>
   </data>
   <data name="&gt;&gt;authorsBox.Name" xml:space="preserve">
@@ -255,13 +270,16 @@ Japanese translation: tsundoku &lt;tsundoku@tsundoku.ne.jp&gt;</value>
     <value>0</value>
   </data>
   <data name="authorsTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 25</value>
+  </data>
+  <data name="authorsTab.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="authorsTab.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="authorsTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 243</value>
+    <value>472, 279</value>
   </data>
   <data name="authorsTab.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -285,7 +303,10 @@ Japanese translation: tsundoku &lt;tsundoku@tsundoku.ne.jp&gt;</value>
     <value>Fill</value>
   </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>4, 3</value>
+  </data>
+  <data name="textBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBox1.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -294,16 +315,18 @@ Japanese translation: tsundoku &lt;tsundoku@tsundoku.ne.jp&gt;</value>
     <value>Both</value>
   </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>346, 237</value>
+    <value>464, 273</value>
   </data>
   <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>Uses:
+    <value>Sounds uses:
+
 TagLib# &lt;https://github.com/mono/taglib-sharp/&gt;
 ToolStripAeroRenderer &lt;ttps://code.google.com/archive/p/szotar/&gt;
-Microsoft.WindowsAPICodePack &lt;https://www.nuget.org/packages/Microsoft.WindowsAPICodePack-Shell&gt;</value>
+Microsoft.WindowsAPICodePack &lt;https://www.nuget.org/packages/Microsoft.WindowsAPICodePack-Shell&gt;
+discord-rpc-csharp &lt;https://github.com/Lachee/discord-rpc-csharp&gt;</value>
   </data>
   <data name="textBox1.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -321,13 +344,16 @@ Microsoft.WindowsAPICodePack &lt;https://www.nuget.org/packages/Microsoft.Window
     <value>0</value>
   </data>
   <data name="attributionBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 25</value>
+  </data>
+  <data name="attributionBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="attributionBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="attributionBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 243</value>
+    <value>472, 279</value>
   </data>
   <data name="attributionBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -348,10 +374,13 @@ Microsoft.WindowsAPICodePack &lt;https://www.nuget.org/packages/Microsoft.Window
     <value>2</value>
   </data>
   <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 51</value>
+    <value>13, 65</value>
+  </data>
+  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 269</value>
+    <value>480, 308</value>
   </data>
   <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -366,7 +395,7 @@ Microsoft.WindowsAPICodePack &lt;https://www.nuget.org/packages/Microsoft.Window
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -375,16 +404,19 @@ Microsoft.WindowsAPICodePack &lt;https://www.nuget.org/packages/Microsoft.Window
     <value>System</value>
   </data>
   <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 326</value>
+    <value>399, 388</value>
+  </data>
+  <data name="okButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 23</value>
+    <value>97, 27</value>
   </data>
   <data name="okButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
-    <value>Prevent Llama Abuse</value>
+    <value>Close</value>
   </data>
   <data name="&gt;&gt;okButton.Name" xml:space="preserve">
     <value>okButton</value>
@@ -396,16 +428,19 @@ Microsoft.WindowsAPICodePack &lt;https://www.nuget.org/packages/Microsoft.Window
     <value>$this</value>
   </data>
   <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="taglineLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="taglineLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 33</value>
+    <value>13, 32</value>
+  </data>
+  <data name="taglineLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="taglineLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 15</value>
+    <value>480, 21</value>
   </data>
   <data name="taglineLabel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -414,7 +449,7 @@ Microsoft.WindowsAPICodePack &lt;https://www.nuget.org/packages/Microsoft.Window
     <value>A boring music player for Windows</value>
   </data>
   <data name="taglineLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;taglineLabel.Name" xml:space="preserve">
     <value>taglineLabel</value>
@@ -426,22 +461,25 @@ Microsoft.WindowsAPICodePack &lt;https://www.nuget.org/packages/Microsoft.Window
     <value>$this</value>
   </data>
   <data name="&gt;&gt;taglineLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="websiteLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="websiteLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 331</value>
+    <value>21, 394</value>
+  </data>
+  <data name="websiteLink.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="websiteLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
+    <value>92, 15</value>
   </data>
   <data name="websiteLink.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="websiteLink.Text" xml:space="preserve">
-    <value>Website</value>
+    <value>Sounds 0.0.0.0</value>
   </data>
   <data name="&gt;&gt;websiteLink.Name" xml:space="preserve">
     <value>websiteLink</value>
@@ -453,16 +491,55 @@ Microsoft.WindowsAPICodePack &lt;https://www.nuget.org/packages/Microsoft.Window
     <value>$this</value>
   </data>
   <data name="&gt;&gt;websiteLink.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="linkLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="linkLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 394</value>
+  </data>
+  <data name="linkLabel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 15</value>
+  </data>
+  <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Sounds 1.1 (Repository)</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
+    <value>linkLabel1</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>384, 361</value>
+    <value>512, 429</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

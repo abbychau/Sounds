@@ -23,5 +23,10 @@ namespace Sounds
         {
             Process.Start("https://cmpct.info/~calvin/Sounds/");
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/abbychau/Sounds");
+        }
     }
 }
