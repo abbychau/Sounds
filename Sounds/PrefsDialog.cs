@@ -96,6 +96,30 @@ namespace Sounds
             }
         }
 
+        public bool ShowDiscordPresence
+        {
+            get
+            {
+                return sendDiscordPresenceBox.Checked;
+            }
+            set
+            {
+                sendDiscordPresenceBox.Checked = value;
+            }
+        }
+
+        public bool LoadLastPlaylist
+        {
+            get
+            {
+                return loadLastPlaylistBox.Checked;
+            }
+            set
+            {
+                loadLastPlaylistBox.Checked = value;
+            }
+        }
+
         public PrefsDialog()
         {
             InitializeComponent();
@@ -106,5 +130,6 @@ namespace Sounds
             DialogResult = DialogResult.OK;
             Close();
         }
+
     }
 }

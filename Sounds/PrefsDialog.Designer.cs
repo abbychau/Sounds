@@ -42,10 +42,14 @@
             this.deleteOnTrackChangeBox = new System.Windows.Forms.CheckBox();
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.sendDiscordPresenceBox = new System.Windows.Forms.CheckBox();
+            this.loadLastPlaylistBox = new System.Windows.Forms.CheckBox();
             this.displayGroup.SuspendLayout();
             this.generalBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timeIncrementBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.volIncrementBox)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // displayGroup
@@ -137,12 +141,34 @@
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.sendDiscordPresenceBox);
+            this.groupBox1.Controls.Add(this.loadLastPlaylistBox);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // sendDiscordPresenceBox
+            // 
+            resources.ApplyResources(this.sendDiscordPresenceBox, "sendDiscordPresenceBox");
+            this.sendDiscordPresenceBox.Name = "sendDiscordPresenceBox";
+            this.sendDiscordPresenceBox.UseVisualStyleBackColor = true;
+            // 
+            // loadLastPlaylistBox
+            // 
+            resources.ApplyResources(this.loadLastPlaylistBox, "loadLastPlaylistBox");
+            this.loadLastPlaylistBox.Name = "loadLastPlaylistBox";
+            this.loadLastPlaylistBox.UseVisualStyleBackColor = true;
+            // 
             // PrefsDialog
             // 
             this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.generalBox);
@@ -159,6 +185,8 @@
             this.generalBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timeIncrementBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.volIncrementBox)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -178,5 +206,8 @@
         private System.Windows.Forms.Label volIncrementLabel;
         private System.Windows.Forms.CheckBox deleteOnTrackChangeBox;
         private System.Windows.Forms.CheckBox showDialogsBox;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox sendDiscordPresenceBox;
+        private System.Windows.Forms.CheckBox loadLastPlaylistBox;
     }
 }

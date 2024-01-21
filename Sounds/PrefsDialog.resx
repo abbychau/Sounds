@@ -130,10 +130,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="showInfoPaneBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 65</value>
+    <value>8, 75</value>
+  </data>
+  <data name="showInfoPaneBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="showInfoPaneBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 18</value>
+    <value>129, 20</value>
   </data>
   <data name="showInfoPaneBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -160,10 +163,13 @@
     <value>System</value>
   </data>
   <data name="showStatusbarBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 42</value>
+    <value>8, 48</value>
+  </data>
+  <data name="showStatusbarBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="showStatusbarBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 18</value>
+    <value>126, 20</value>
   </data>
   <data name="showStatusbarBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -190,10 +196,13 @@
     <value>System</value>
   </data>
   <data name="showToolbarBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
+    <value>8, 22</value>
+  </data>
+  <data name="showToolbarBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="showToolbarBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 18</value>
+    <value>119, 20</value>
   </data>
   <data name="showToolbarBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -214,10 +223,16 @@
     <value>2</value>
   </data>
   <data name="displayGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+    <value>16, 14</value>
+  </data>
+  <data name="displayGroup.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="displayGroup.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="displayGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 88</value>
+    <value>347, 102</value>
   </data>
   <data name="displayGroup.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -235,10 +250,112 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;displayGroup.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="generalBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;showDialogsBox.Name" xml:space="preserve">
+    <value>showDialogsBox</value>
+  </data>
+  <data name="&gt;&gt;showDialogsBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;showDialogsBox.Parent" xml:space="preserve">
+    <value>generalBox</value>
+  </data>
+  <data name="&gt;&gt;showDialogsBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;timeIncrementBox.Name" xml:space="preserve">
+    <value>timeIncrementBox</value>
+  </data>
+  <data name="&gt;&gt;timeIncrementBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timeIncrementBox.Parent" xml:space="preserve">
+    <value>generalBox</value>
+  </data>
+  <data name="&gt;&gt;timeIncrementBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;timeIncrementLabel.Name" xml:space="preserve">
+    <value>timeIncrementLabel</value>
+  </data>
+  <data name="&gt;&gt;timeIncrementLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timeIncrementLabel.Parent" xml:space="preserve">
+    <value>generalBox</value>
+  </data>
+  <data name="&gt;&gt;timeIncrementLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;volIncrementBox.Name" xml:space="preserve">
+    <value>volIncrementBox</value>
+  </data>
+  <data name="&gt;&gt;volIncrementBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;volIncrementBox.Parent" xml:space="preserve">
+    <value>generalBox</value>
+  </data>
+  <data name="&gt;&gt;volIncrementBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;volIncrementLabel.Name" xml:space="preserve">
+    <value>volIncrementLabel</value>
+  </data>
+  <data name="&gt;&gt;volIncrementLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;volIncrementLabel.Parent" xml:space="preserve">
+    <value>generalBox</value>
+  </data>
+  <data name="&gt;&gt;volIncrementLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;deleteOnTrackChangeBox.Name" xml:space="preserve">
+    <value>deleteOnTrackChangeBox</value>
+  </data>
+  <data name="&gt;&gt;deleteOnTrackChangeBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteOnTrackChangeBox.Parent" xml:space="preserve">
+    <value>generalBox</value>
+  </data>
+  <data name="&gt;&gt;deleteOnTrackChangeBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="generalBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 122</value>
+  </data>
+  <data name="generalBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="generalBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="generalBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>347, 140</value>
+  </data>
+  <data name="generalBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="generalBox.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="&gt;&gt;generalBox.Name" xml:space="preserve">
+    <value>generalBox</value>
+  </data>
+  <data name="&gt;&gt;generalBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;generalBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;generalBox.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="showDialogsBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -247,10 +364,13 @@
     <value>System</value>
   </data>
   <data name="showDialogsBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 43</value>
+    <value>8, 50</value>
+  </data>
+  <data name="showDialogsBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="showDialogsBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 18</value>
+    <value>191, 20</value>
   </data>
   <data name="showDialogsBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -271,10 +391,13 @@
     <value>0</value>
   </data>
   <data name="timeIncrementBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 93</value>
+    <value>135, 107</value>
+  </data>
+  <data name="timeIncrementBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="timeIncrementBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 20</value>
+    <value>204, 25</value>
   </data>
   <data name="timeIncrementBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -295,10 +418,13 @@
     <value>True</value>
   </data>
   <data name="timeIncrementLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 95</value>
+    <value>8, 110</value>
+  </data>
+  <data name="timeIncrementLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="timeIncrementLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 13</value>
+    <value>98, 15</value>
   </data>
   <data name="timeIncrementLabel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -319,10 +445,13 @@
     <value>2</value>
   </data>
   <data name="volIncrementBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 67</value>
+    <value>135, 77</value>
+  </data>
+  <data name="volIncrementBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="volIncrementBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 20</value>
+    <value>204, 25</value>
   </data>
   <data name="volIncrementBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -343,10 +472,13 @@
     <value>True</value>
   </data>
   <data name="volIncrementLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 69</value>
+    <value>8, 80</value>
+  </data>
+  <data name="volIncrementLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="volIncrementLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 13</value>
+    <value>113, 15</value>
   </data>
   <data name="volIncrementLabel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -373,10 +505,13 @@
     <value>System</value>
   </data>
   <data name="deleteOnTrackChangeBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
+    <value>8, 22</value>
+  </data>
+  <data name="deleteOnTrackChangeBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="deleteOnTrackChangeBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 18</value>
+    <value>233, 20</value>
   </data>
   <data name="deleteOnTrackChangeBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -396,30 +531,6 @@
   <data name="&gt;&gt;deleteOnTrackChangeBox.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="generalBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 106</value>
-  </data>
-  <data name="generalBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 121</value>
-  </data>
-  <data name="generalBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="generalBox.Text" xml:space="preserve">
-    <value>General</value>
-  </data>
-  <data name="&gt;&gt;generalBox.Name" xml:space="preserve">
-    <value>generalBox</value>
-  </data>
-  <data name="&gt;&gt;generalBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;generalBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;generalBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -427,10 +538,13 @@
     <value>System</value>
   </data>
   <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 233</value>
+    <value>155, 364</value>
+  </data>
+  <data name="okButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>100, 27</value>
   </data>
   <data name="okButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -448,7 +562,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -457,10 +571,13 @@
     <value>System</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>197, 233</value>
+    <value>263, 364</value>
+  </data>
+  <data name="cancelButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>100, 27</value>
   </data>
   <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -478,16 +595,124 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="sendDiscordPresenceBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="sendDiscordPresenceBox.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="sendDiscordPresenceBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="sendDiscordPresenceBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 48</value>
+  </data>
+  <data name="sendDiscordPresenceBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="sendDiscordPresenceBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 20</value>
+  </data>
+  <data name="sendDiscordPresenceBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="sendDiscordPresenceBox.Text" xml:space="preserve">
+    <value>Send Discord Presence</value>
+  </data>
+  <data name="&gt;&gt;sendDiscordPresenceBox.Name" xml:space="preserve">
+    <value>sendDiscordPresenceBox</value>
+  </data>
+  <data name="&gt;&gt;sendDiscordPresenceBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sendDiscordPresenceBox.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;sendDiscordPresenceBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="loadLastPlaylistBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="loadLastPlaylistBox.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="loadLastPlaylistBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="loadLastPlaylistBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 22</value>
+  </data>
+  <data name="loadLastPlaylistBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="loadLastPlaylistBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 20</value>
+  </data>
+  <data name="loadLastPlaylistBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="loadLastPlaylistBox.Text" xml:space="preserve">
+    <value>Load the last playlist on start</value>
+  </data>
+  <data name="&gt;&gt;loadLastPlaylistBox.Name" xml:space="preserve">
+    <value>loadLastPlaylistBox</value>
+  </data>
+  <data name="&gt;&gt;loadLastPlaylistBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loadLastPlaylistBox.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;loadLastPlaylistBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 268</value>
+  </data>
+  <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>347, 75</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Misc</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>284, 268</value>
+    <value>379, 404</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

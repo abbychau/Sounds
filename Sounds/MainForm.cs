@@ -1,4 +1,6 @@
-﻿using Microsoft.WindowsAPICodePack.Taskbar;
+﻿using DiscordRPC;
+using DiscordRPC.Logging;
+using Microsoft.WindowsAPICodePack.Taskbar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +47,9 @@ namespace Sounds
         // setings
         int volIncrement = 5; // for trackbar/keyboard
         int timeIncrement = 15;
+
+        bool showDiscordPresence;
+        bool loadLastPlaylist;
         bool repeat = false;
         bool deleteOnNext = false;
         bool recursive = false;
@@ -113,6 +118,7 @@ namespace Sounds
             }
         }
 
+
         public MainForm()
         {
 #if ForceJA
@@ -134,6 +140,8 @@ namespace Sounds
             TimeIncrement = Properties.Settings.Default.TimeShortcutSeconds;
             recursive = Properties.Settings.Default.AddFolderRecursive;
             showDialogs = Properties.Settings.Default.ShowConfirmationDialogs;
+            showDiscordPresence = Properties.Settings.Default.ShowDiscordPresence;
+            loadLastPlaylist = Properties.Settings.Default.LoadLastPlaylist;
 
             if (TaskbarManager.IsPlatformSupported)
             {
@@ -234,6 +242,16 @@ namespace Sounds
                 }
             };
 
+
+            discordClient = new DiscordRpcClient("1198297918319378512");
+            discordClient.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
+            discordClient.OnReady += (sender, e) => Console.WriteLine("Received Ready from user {0}", e.User.Username);
+
+            discordClient.OnPresenceUpdate += (sender, e) =>Console.WriteLine("Received Update! {0}", e.Presence);
+
+            discordClient.Initialize();
+
+
             // finally init UI by creating PL (args will override it)
             //load the playlist file from registry
             //check if  Properties.Settings.Default has ["LastPlaylistFile"]
@@ -249,8 +267,8 @@ namespace Sounds
                     return;
                 }
             }
-
             NewPlaylist();
+
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
@@ -495,6 +513,7 @@ namespace Sounds
                 trayIcon.Text = preview.Title;
             }
         }
+        private static DiscordRpcClient discordClient { get; set; }
 
         // Metadata and such
         // TODO: needs optimization. profiler says we're churning, but
@@ -525,6 +544,26 @@ namespace Sounds
 #endif
                 if (newBoldItem != null)
                     newBoldItem.Font = new Font(listView1.Font, FontStyle.Bold);
+
+
+                //send to discord rich prescence
+
+                if (showDiscordPresence)
+                {
+                    var presence = new RichPresence()
+                    {
+                        Details = title ?? activeFile.Name,
+                        State = artist,
+                        Assets = new Assets()
+                        {
+                            LargeImageKey = "play",
+                            LargeImageText = "Sounds",
+                            SmallImageKey = "play",
+                            SmallImageText = "Sounds"
+                        }
+                    };
+                    discordClient.SetPresence(presence);
+                }
             }
             else
             {
@@ -559,6 +598,9 @@ namespace Sounds
             {
                 lvi.Font = listView1.Font;
             }
+
+
+
         }
 
         public Bitmap AlbumArt
@@ -1212,6 +1254,8 @@ namespace Sounds
             Properties.Settings.Default.ShowConfirmationDialogs = showDialogs;
             Properties.Settings.Default.VolumeShortcutIncrement = volIncrement;
             Properties.Settings.Default.TimeShortcutSeconds = timeIncrement;
+            Properties.Settings.Default.ShowDiscordPresence = showDiscordPresence;
+            Properties.Settings.Default.LoadLastPlaylist = loadLastPlaylist;
             Properties.Settings.Default.Save();
         }
 
@@ -1233,6 +1277,8 @@ namespace Sounds
                 ShowConfirmationDialogs = showDialogs,
                 VolumeIncrement = volIncrement,
                 TimeIncrement = timeIncrement,
+                ShowDiscordPresence = showDiscordPresence,
+                LoadLastPlaylist = loadLastPlaylist
             };
             if (pd.ShowDialog(this) == DialogResult.OK)
             {
@@ -1243,6 +1289,9 @@ namespace Sounds
                 showDialogs = pd.ShowConfirmationDialogs;
                 VolumeIncrement = pd.VolumeIncrement;
                 TimeIncrement = pd.TimeIncrement;
+                showDiscordPresence = pd.ShowDiscordPresence;
+                loadLastPlaylist = pd.LoadLastPlaylist;
+
                 UpdateUI();
             }
         }

@@ -166,5 +166,29 @@ namespace Sounds.Properties {
                 this["LastPlaylist"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowDiscordPresence {
+            get {
+                return ((bool)(this["ShowDiscordPresence"]));
+            }
+            set {
+                this["ShowDiscordPresence"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool LoadLastPlaylist {
+            get {
+                return ((bool)(this["LoadLastPlaylist"]));
+            }
+            set {
+                this["LoadLastPlaylist"] = value;
+            }
+        }
     }
 }
