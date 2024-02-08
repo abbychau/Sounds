@@ -1,6 +1,9 @@
 # Sounds
 
-A minimalist music player for Windows. Original: https://cmpct.info/~calvin/Sounds/
+A minimalist music player for Windows. 
+
+
+![Screenshot](./screenshot.png)
 
 - Written in C#.
 - No music library is managed by the application; that's the file system and file metadata's responsibility. Just add (or drag) the files into the playlist and you're good to go.
@@ -11,7 +14,16 @@ A minimalist music player for Windows. Original: https://cmpct.info/~calvin/Soun
 
 - Now builds in .NET Framework 4.8
 - Fixes a bug where only the first file was being added while loading an m3u playlist
+- Implementation of Repeat
+- Fixes on About Page
+- Registry savings 
+- Bunch of UX improvements
+- Discord Rich Presence
+- Windows context menu integration
 
 # To do
 - Add a playlist library view
 - Publish "Now Playing" to Discord Rich Presence
+
+# Thanks
+Original: https://cmpct.info/~calvin/Sounds/
