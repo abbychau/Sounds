@@ -17,9 +17,10 @@ A minimalist music player for Windows.
 - Implementation of Repeat
 - Fixes on About Page
 - Registry savings 
-- Bunch of UX improvements
+- Bunch of UX improvements(like time, flikering, etc)
 - Discord Rich Presence
 - Windows context menu integration
+- Window Snapping
 
 # To do
 - Add a playlist library view
