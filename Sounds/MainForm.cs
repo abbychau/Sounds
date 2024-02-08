@@ -1,5 +1,6 @@
 ﻿using DiscordRPC;
 using DiscordRPC.Logging;
+using Microsoft.Win32;
 using Microsoft.WindowsAPICodePack.Taskbar;
 using System;
 using System.Collections.Generic;
@@ -51,6 +52,7 @@ namespace Sounds
         bool showDiscordPresence;
         bool loadLastPlaylist;
         bool repeat = false;
+        bool ramdom = false;
         bool deleteOnNext = false;
         bool recursive = false;
         bool showDialogs;
@@ -121,21 +123,25 @@ namespace Sounds
 
         public MainForm()
         {
-#if ForceJA
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja-JP");
-#endif
+            #if ForceJA
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("zh-TW");
+            #endif
             InitializeComponent();
-            // native ToolStrips
+            
             if (Properties.Settings.Default.NativeToolStripRendering)
                 ToolStripManager.Renderer = new ToolStripAeroRenderer(ToolbarTheme.Toolbar);
-            // the designer doesn't want to use icons from resource files
+            
             Icon = Properties.Resources.AppIcon;
+
+
             // load settings
             showToolBar = Properties.Settings.Default.ShowToolBar;
             showStatusBar = Properties.Settings.Default.ShowStatusBar;
             showInfoPane = Properties.Settings.Default.ShowInfoPane;
             deleteOnNext = Properties.Settings.Default.DeleteOnNext;
             repeat = Properties.Settings.Default.Repeat;
+
+            repeatToolStripMenuItem.Text = "Toggle Repeat (Currently" + (repeat ? " On" : " Off") + ")";
             VolumeIncrement = Properties.Settings.Default.VolumeShortcutIncrement;
             TimeIncrement = Properties.Settings.Default.TimeShortcutSeconds;
             recursive = Properties.Settings.Default.AddFolderRecursive;
@@ -217,6 +223,13 @@ namespace Sounds
                 // avoid race coondition
                 if (!repeat)
                     trackBarSyncTimer.Enabled = false;
+                if (repeat)
+                {
+                    // go back to the start
+                    mp.Position = new TimeSpan(0, 0, 0);
+                    return;
+                }
+                    
                 if (playing)
                     Next();
             };
@@ -1115,7 +1128,11 @@ namespace Sounds
 
         private void repeatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            repeat = repeatToolStripMenuItem.Checked;
+            repeat = !repeat;
+            repeatToolStripMenuItem.Text = "Toggle Repeat (Currently" + (repeat ? " On" : " Off") + ")";
+
+            //save repeat to registry
+            Properties.Settings.Default.Repeat = repeat;
         }
 
         private void shuffleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1446,6 +1463,34 @@ namespace Sounds
 
             trayIcon.ContextMenuStrip = trayMenu;
 
+            // UnregisterWindowsDirectoryRightClickContextMenu();
+            //// register windows directory right click context menu
+            //// add to registry
+            //RegistryKey key = Registry.ClassesRoot.CreateSubKey(@"Directory\Background\shell\Sounds");
+            //key.SetValue("", "Play with Sounds");
+            //key.SetValue("Icon", Application.ExecutablePath);
+            ////add command subkey
+            //RegistryKey command = key.CreateSubKey("command");
+            //command.SetValue("", "\"" + Application.ExecutablePath + "\" \"%V\"");
+
+            //key.Close();
+
+
+            //// get arguments
+            //string[] args = Environment.GetCommandLineArgs();
+            //var path = "";
+            //if (args.Length > 1)
+            //{
+            //    path = args[1];
+            //}
+            //MessageBox.Show(path);
+        }
+
+        //function to unregister windows directory right click context menu
+        private void UnregisterWindowsDirectoryRightClickContextMenu()
+        {
+            //remove from registry
+            Registry.ClassesRoot.DeleteSubKeyTree(@"Directory\Background\shell\Sounds");
         }
 
 
@@ -1458,13 +1503,19 @@ namespace Sounds
         //OnResizeEnd, make window snap to edges
         protected override void OnResizeEnd(EventArgs e)
         {
-                base.OnResizeEnd(e);
+            base.OnResizeEnd(e);
             Screen scn = Screen.FromPoint(this.Location);
             if (DoSnap(this.Left, scn.WorkingArea.Left)) this.Left = scn.WorkingArea.Left;
             if (DoSnap(this.Top, scn.WorkingArea.Top)) this.Top = scn.WorkingArea.Top;
             if (DoSnap(scn.WorkingArea.Right, this.Right)) this.Left = scn.WorkingArea.Right - this.Width;
             if (DoSnap(scn.WorkingArea.Bottom, this.Bottom)) this.Top = scn.WorkingArea.Bottom - this.Height;
 
+        }
+
+        private void randomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ramdom = randomToolStripMenuItem.Checked;
+            randomToolStripMenuItem.Text = "Toggle Random (now:" + (ramdom ? " on" : " off") + ")";
         }
     }
 }

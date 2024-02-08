@@ -87,6 +87,7 @@
             this.muteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.repeatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.randomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutSoundsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -461,7 +462,8 @@
             this.volumeDownToolStripMenuItem,
             this.muteToolStripMenuItem,
             this.toolStripSeparator4,
-            this.repeatToolStripMenuItem});
+            this.repeatToolStripMenuItem,
+            this.randomToolStripMenuItem});
             this.playbackToolStripMenuItem.Name = "playbackToolStripMenuItem";
             resources.ApplyResources(this.playbackToolStripMenuItem, "playbackToolStripMenuItem");
             // 
@@ -560,6 +562,12 @@
             this.repeatToolStripMenuItem.Name = "repeatToolStripMenuItem";
             resources.ApplyResources(this.repeatToolStripMenuItem, "repeatToolStripMenuItem");
             this.repeatToolStripMenuItem.Click += new System.EventHandler(this.repeatToolStripMenuItem_Click);
+            // 
+            // randomToolStripMenuItem
+            // 
+            this.randomToolStripMenuItem.Name = "randomToolStripMenuItem";
+            resources.ApplyResources(this.randomToolStripMenuItem, "randomToolStripMenuItem");
+            this.randomToolStripMenuItem.Click += new System.EventHandler(this.randomToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -893,6 +901,7 @@
         private System.Windows.Forms.ToolStripMenuItem pasteContextToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem selectAllContextToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem randomToolStripMenuItem;
     }
 }
 
