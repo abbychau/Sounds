@@ -11,10 +11,13 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Windows.Media;
+using System.Windows.Input;
+using GlobalHotKey;
 
 namespace Sounds
 {
@@ -79,6 +82,9 @@ namespace Sounds
             }
         }
 
+
+        VolumeBar volumeBar = new VolumeBar();
+
         double Volume
         {
             get
@@ -97,6 +103,10 @@ namespace Sounds
                 volumeButton.Text = string.Format(simplePercent, "{0:P}", mp.Volume);
                 volumeStatusButton.Text = string.Format(simplePercent, "{0:P}", mp.Volume);
                 UpdateMenus();
+
+                Console.WriteLine("Volume: " + mp.Volume);
+                //show the volume bar
+                volumeBar.SetVolume(Convert.ToInt32(mp.Volume * 100));
             }
         }
 
@@ -1379,7 +1389,7 @@ namespace Sounds
             }
         }
 
-        private void listView1_MouseUp(object sender, MouseEventArgs e)
+        private void listView1_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
@@ -1484,6 +1494,50 @@ namespace Sounds
             //    path = args[1];
             //}
             //MessageBox.Show(path);
+
+            // register global hotkeys: Win+Up: volume up, Win+Down: volume down, Win+Left: previous, Win+Right: next
+            RegisterGlobalHotKeys();
+        }
+
+        [DllImport("user32.dll")]
+        static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, int dwExtraInfo);
+
+        void RegisterGlobalHotKeys()
+        {
+            var hotKeyManager = new HotKeyManager();
+            hotKeyManager.Register(Key.NumPad1, System.Windows.Input.ModifierKeys.Windows);
+            hotKeyManager.Register(Key.NumPad2, System.Windows.Input.ModifierKeys.Windows);
+            hotKeyManager.Register(Key.NumPad4, System.Windows.Input.ModifierKeys.Windows);
+            hotKeyManager.Register(Key.NumPad5, System.Windows.Input.ModifierKeys.Windows);
+
+
+            hotKeyManager.KeyPressed += (object sender, KeyPressedEventArgs e) =>
+            {
+                
+                if(e.HotKey.Key == Key.NumPad2)
+                {
+                    keybd_event((byte)Keys.VolumeUp, 0, 0, 0);
+                }
+
+                if (e.HotKey.Key == Key.NumPad1)
+                {
+                    keybd_event((byte)Keys.VolumeDown, 0, 0, 0);
+                }
+
+                if (e.HotKey.Key == Key.NumPad4)
+                {
+                    // app volume down
+                    Volume -= VolumeIncrement * 0.01;
+                }
+
+                if (e.HotKey.Key == Key.NumPad5)
+                {
+                    // app volume up
+                    Volume += VolumeIncrement * 0.01;
+                }
+            };
+
+
         }
 
         //function to unregister windows directory right click context menu
